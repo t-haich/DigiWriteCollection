@@ -9,6 +9,7 @@ function doAudio(when) {
   alert('inside do audio before sending signal');
   oscillator = audioContext.createOscillator(); // Create sound source
   oscillator.connect(audioContext.destination); // Connect sound to output
+  alert('connect sound source and output');
   oscillator.start(0); // Play instantly
   if (when == 'start') soundStartTime = new Date().getTime();
   setTimeout(function() {
@@ -124,7 +125,7 @@ function doFirebaseCanvas () {
   var firebaseData = new Firebase("https://digiwrite.firebaseio.com/data");
   $('#record-button').click(function() {
     if($('#record-button').text() == 'Start') {
-      alert('before calling do audio');
+      // alert('before calling do audio');
       doAudio('start');
       firebaseState.set('on');
       startTemplate($('#animate').prop('checked'));
