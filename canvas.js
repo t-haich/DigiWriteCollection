@@ -6,6 +6,7 @@ try {
   alert('Web Audio API is not supported in this browser');
 }
 function doAudio(when) {
+  alert('inside do audio before sending signal');
   oscillator = audioContext.createOscillator(); // Create sound source
   oscillator.connect(audioContext.destination); // Connect sound to output
   oscillator.start(0); // Play instantly
