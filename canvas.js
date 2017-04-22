@@ -9,7 +9,7 @@ function doAudio(when) {
   alert('inside do audio before sending signal');
   oscillator = audioContext.createOscillator(); // Create sound source
   oscillator.connect(audioContext.destination); // Connect sound to output
-  alert('connect sound source and output');
+  alert('connected to' + audioContext.destination);
   oscillator.start(0); // Play instantly
   if (when == 'start') soundStartTime = new Date().getTime();
   setTimeout(function() {
