@@ -124,6 +124,7 @@ function doFirebaseCanvas () {
   var firebaseData = new Firebase("https://digiwrite.firebaseio.com/data");
   $('#record-button').click(function() {
     if($('#record-button').text() == 'Start') {
+      alert('before calling do audio');
       doAudio('start');
       firebaseState.set('on');
       startTemplate($('#animate').prop('checked'));
